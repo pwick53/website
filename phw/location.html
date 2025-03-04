@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html>
+
 <body>
-<h1>i know where you are.</h1>
+	<h1>i know where you are.</h1>
 
-<button onclick="getLocation()">want to see?</button>
+	<button onclick="getLocation()">want to see?</button>
 
-<p id="demo"></p>
+	<p id="demo"></p>
 
-<script>
-const x = document.getElementById("demo");
+	<script>
+		const x = document.getElementById("demo");
 
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else { 
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
-}
+		function getLocation() {
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(showPosition);
+			} else {
+				x.innerHTML = "Geolocation is not supported by this browser.";
+			}
+		}
 
-function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude + 
-  "<br>Longitude: " + position.coords.longitude;
-}
-</script>
+		function showPosition(position) {
+			x.innerHTML = "Latitude: " + position.coords.latitude +
+				"<br>Longitude: " + position.coords.longitude;
+		}
+	</script>
 
 </body>
-</html>
 
+</html>
